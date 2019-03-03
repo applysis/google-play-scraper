@@ -6,11 +6,11 @@ const assertValidApp = require('./common').assertValidApp;
 const validator = require('validator');
 const assertValidUrl = require('./common').assertValidUrl;
 
-describe('Developer method', () => {
-  it('should fetch a valid application list for the given developer with string id', () => {
-    return gplay.developer({ devId: 'Jam City, Inc.' })
-      .then((apps) => apps.map(assertValidApp))
-      .then((apps) => apps.map((app) => assert.equal(app.developer, 'Jam City, Inc.')));
+describe.skip('Developer method', () => {
+  it('should fetch a valid application list for the given developer', () => {
+    return gplay.developer({devId: 'Jam City, Inc.'})
+    .then((apps) => apps.map(assertValidApp))
+    .then((apps) => apps.map((app) => assert.equal(app.developer, 'Jam City, Inc.')));
   });
 
   it('should fetch a valid application list for the given developer with numeric id', () => {
